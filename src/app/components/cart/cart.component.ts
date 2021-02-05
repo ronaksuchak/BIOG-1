@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   products: Observable<CartItem[]>
   constructor(
-    private cartService: CartService ,private router : Router
+    private cartService: CartService, private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
   public addToCart(value) {
     let cartItem = new CartItem(value);
     this.cartService.setCartItem(cartItem);
-     this.router.navigateByUrl('/shipping')
+    this.router.navigateByUrl('/shipping')
   }
+
 }

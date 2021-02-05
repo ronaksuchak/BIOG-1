@@ -10,6 +10,8 @@ export class CartService {
   storage: Storage = sessionStorage;
   cartObser: Observable<CartItem[]>;
   storageKey = "BIOG_cart";
+  data: CartItem[];
+  itemCount = 0;
 
   constructor() { }
 
@@ -29,12 +31,17 @@ export class CartService {
   }
   getAllCartItem(): Observable<CartItem[]> {
     let temp = new Observable<CartItem[]>(s => {
-      var data: CartItem[] = JSON.parse(this.storage.getItem(this.storageKey)) || [];
-      s.next(data);
+      this.data = JSON.parse(this.storage.getItem(this.storageKey)) || [];
+      s.next(this.data);
+      this.itemCount++;
     })
     this.cartObser = temp;
     return this.cartObser;
-
   }
-
+  getItemCount(): number {
+    return this.itemCount;
+  }
+  setItemCount(count: number) {
+    this.itemCount = count;
+  }
 }

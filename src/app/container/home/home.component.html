@@ -6,7 +6,7 @@
     <img mat-card-image src='assets\images\student.png' alt="Photo of a Shiba Inu">
     <mat-card-actions>
       &nbsp;&nbsp;<a mat-button routerLinkActive="list-item-active" id="button"
-        (click)="selected('gaming')">View</a><br>
+        (click)="selected('students')">View</a><br>
       <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">Customize With
         Intel</a>
       <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="button">Customize With Amd</a>
@@ -15,12 +15,12 @@
 </mat-card>
 
 <mat-card class="grid-box">
-<mat-card-content>
+  <mat-card-content>
     <h2><b>For Gaming</b></h2><br>
     <img mat-card-image src='assets\images\gaming.jpg' alt="Photo of a Shiba Inu">
-    <mat-card-actions >
-      &nbsp;&nbsp;<a mat-button routerLinkActive="list-item-active" 
-        (click)="selected('gaming')"  id="button">View</a><br>
+    <mat-card-actions>
+      &nbsp;&nbsp;<a mat-button routerLinkActive="list-item-active" (click)="selected('gaming')"
+        id="button">View</a><br>
       <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">Customize With
         Intel</a>
       <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="button">Customize With Amd</a>

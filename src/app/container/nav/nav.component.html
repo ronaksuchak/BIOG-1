@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" >
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
@@ -7,7 +7,7 @@
         <mat-icon>home</mat-icon> &nbsp; Home
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/addtocart">
-        <mat-icon  matBadge="15"  matBadgeColor="accent">shopping_cart</mat-icon>&nbsp;
+        <mat-icon matBadge={{itemCount}} matBadgeColor="accent">shopping_cart</mat-icon>&nbsp;
         Cart
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/product-list">
@@ -25,7 +25,7 @@
     <mat-nav-list>
 
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/cpu">
-        <img src="https://img.icons8.com/material/24/ffffff/smartphone-cpu--v1.png"/>
+        <img src="https://img.icons8.com/material/24/ffffff/smartphone-cpu--v1.png" />
         &nbsp;&nbsp;CPU
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/case">
@@ -42,41 +42,41 @@
             </g>
           </g>
         </svg>
-        
+
         &nbsp;&nbsp;Case
       </a>
 
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/gpu">
-        <img src="https://img.icons8.com/material/24/ffffff/buy-with-card.png"/>
+        <img src="https://img.icons8.com/material/24/ffffff/buy-with-card.png" />
         &nbsp;&nbsp;
         Graphic Card
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/ram">
-       <img src="https://img.icons8.com/material/24/ffffff/memory-slot.png"/>
+        <img src="https://img.icons8.com/material/24/ffffff/memory-slot.png" />
         &nbsp;&nbsp;
         RAM
       </a>
 
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/storage">
-       <img src="https://img.icons8.com/material/24/ffffff/cloud-sync.png"/>
+        <img src="https://img.icons8.com/material/24/ffffff/cloud-sync.png" />
         &nbsp; &nbsp;
         Storage
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/mother-board">
-        <img src="https://img.icons8.com/fluent-systems-filled/25/ffffff/motherboard.png"/>
-         &nbsp; &nbsp;
-         Mother-Board
-       </a>
-       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/cooler">
-        <img src="https://img.icons8.com/windows/32/ffffff/technical-air.png"/>
-         &nbsp; &nbsp;
-         CPU Cooler
-       </a>
-       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/psu">
+        <img src="https://img.icons8.com/fluent-systems-filled/25/ffffff/motherboard.png" />
+        &nbsp; &nbsp;
+        Mother-Board
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/cooler">
+        <img src="https://img.icons8.com/windows/32/ffffff/technical-air.png" />
+        &nbsp; &nbsp;
+        CPU Cooler
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/psu">
         <mat-icon>power</mat-icon>
-         &nbsp; &nbsp;
-         Power Supply
-       </a>
+        &nbsp; &nbsp;
+        Power Supply
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -96,12 +96,12 @@
           </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup">
-              Sign Up
-            </a></button>
+                Sign Up
+              </a></button>
             <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signin">
-              Sign In
-            </a></button>
-            
+                Sign In
+              </a></button>
+
           </mat-menu>
           <!-- manumodule used -->
         </li>
@@ -113,15 +113,15 @@
 
     <mat-toolbar id="footer">
       <div class="container">
- 
+
         <p>
           <a mat-button routerLinkActive="list-item-active" routerLink="/contact" id="button">Contact With Us</a>
           <a mat-button routerLinkActive="list-item-active" routerLink="/about" id="button">About Us</a>
-        
+
         </p>
       </div>
-      
-    
+
+
     </mat-toolbar>
 
   </mat-sidenav-content>

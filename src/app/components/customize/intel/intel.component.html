@@ -3,18 +3,18 @@
     <td><a mat-button routerLinkActive="list-item-active" id="compobutton" (click)="selected('cpu')">
         Add CPU</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('cpu').brand || selectxt }} {{selectedMap.get('cpu').name || "selectxt"}}</a></td>
+        {{selectedMap.get('cpu')?.brand }} {{selectedMap.get('cpu')?.name }}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('cpu').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('cpu')?.price |currency:'INR'}}</a></td>
   </tr>
   <tr>
     <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
         (click)="selected('cooler')">
         Add CPU Cooler</a></td>
-    <td><a mat-button id="compobutton">{{selectedMap.get('cooler').brand}} {{selectedMap.get('cooler').name ||
-        "selectxt"}}</a></td>
+    <td><a mat-button id="compobutton">{{selectedMap.get('cooler')?.brand }}
+        {{selectedMap.get('cooler')?.name}}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('cooler').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('cooler')?.price |currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -22,9 +22,9 @@
         (click)="selected('ram')">
         Add Memory</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('ram').brand}} {{selectedMap.get('ram').name || "selectxt"}}</a></td>
+        {{selectedMap.get('ram')?.brand }} {{selectedMap.get('ram')?.name }}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('ram').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('ram')?.price |currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -32,9 +32,9 @@
         (click)="selected('mother-board')">
         Add MotherBoard</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('mother-board').brand}} {{selectedMap.get('mother-board').name || "selectxt"}}</a></td>
+        {{selectedMap.get('mother-board')?.brand }} {{selectedMap.get('mother-board')?.name}}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('mother-board').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('mother-board')?.price |currency:'INR'}}</a></td>
 
   </tr>
   <tr>
@@ -42,9 +42,9 @@
         (click)="selected('gpu')">
         Add Graphic Card</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('gpu').brand}} {{selectedMap.get('gpu').name || "selectxt"}}</a></td>
+        {{selectedMap.get('gpu')?.brand }} {{selectedMap.get('gpu')?.name }}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('gpu').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('gpu')?.price |currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -52,9 +52,9 @@
         (click)="selected('case')">
         Add Case</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('CASE').brand}} {{selectedMap.get('CASE').name || "selectxt"}}</a></td>
+        {{selectedMap.get('CASE')?.brand }} {{selectedMap.get('CASE')?.name }}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('CASE').price |currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('CASE')?.price |currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -62,10 +62,10 @@
         (click)="selected('storage')">
         Add Storage</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('storage').brand}} {{selectedMap.get('storage').name || "selectxt"}}
+        {{selectedMap.get('storage')?.brand }} {{selectedMap.get('storage')?.name }}
       </a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('storage').price|currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('storage')?.price|currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -73,9 +73,9 @@
         (click)="selected('psu')">
         Add Power Supply</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('psu').brand}} {{selectedMap.get('psu').name || "selectxt"}}</a></td>
+        {{selectedMap.get('psu')?.brand }} {{selectedMap.get('psu')?.name }}</a></td>
     <td><a mat-button id="compobutton">
-        {{selectedMap.get('psu').price | currency:'INR' || "selectxt"}}</a></td>
+        {{selectedMap.get('psu')?.price | currency:'INR' }}</a></td>
 
   </tr>
   <tr>
@@ -84,7 +84,7 @@
       <a mat-button id="compobutton">
         Total price </a>
     <td> <a mat-button id="compobutton">
-        {{totalPrice |currency:'INR'}}</a> </td>
+        {{totalPrice|currency:'INR' || 0 }}</a> </td>
 
   </tr>
 </table>

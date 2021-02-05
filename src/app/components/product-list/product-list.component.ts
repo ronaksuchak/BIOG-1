@@ -28,6 +28,7 @@ export class ProductListComponent implements OnInit {
   //array of product class
   products: Observable<any[]>;
   name: string;
+  usecase: string;
   apiHelper: ApiHelper;
   //service injection
   constructor(private usecaseService: UsecaseService,
@@ -51,10 +52,12 @@ export class ProductListComponent implements OnInit {
 
     })
     this.route.queryParamMap.subscribe(params => {
-      var usecase = params.get('use');
-      console.log(usecase);
-      if (!!usecase)
-        this.products = usecaseService.getSystemByUse(usecase);
+      this.usecase = params.get('use');
+      // console.log(usecase);
+      if (!!this.usecase)
+        this.products = usecaseService.getSystemByUse(this.usecase);
+      else
+        this.products = usecaseService.getAllPc();
     })
   }
 
@@ -84,7 +87,8 @@ export class ProductListComponent implements OnInit {
   public addToCart(value) {
     let cartItem = new CartItem(value);
     this.cartService.setCartItem(cartItem);
-    // this.router.navigateByUrl('/addtocart')
+    console.log("add to cart called!!")
+    this.router.navigateByUrl('/addtocart')
 
   }
 
