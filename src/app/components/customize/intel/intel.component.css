@@ -1,0 +1,15 @@
+
+  .table{
+    /* margin: 0 auto; */
+    margin-top: 20px;
+     margin-left: 20%;
+   /* margin-right: auto; */
+    width: 60%;
+  }
+
+  #compobutton{
+    background-color: #212121;
+    color: #fff;
+    /* margin-top: 20px;
+    margin-left: 90px; */
+  }

@@ -1,0 +1,21 @@
+
+<mat-card class="grid-box" *ngFor="let tempProduct of products | async">
+ 
+    <mat-card-content>
+      <br>
+      <img mat-card-image src="{{ tempProduct.imageUrl }}" alt="Systems" id="pimg">
+    
+        <div class="price">
+          <h2>{{ tempProduct.name }}</h2>
+          <p>{{ tempProduct.price | currency:'INR' }}</p>
+        </div>
+        <mat-card-actions id="button">
+            <button mat-raised-button color="warn">Wishlist</button>
+            <button mat-raised-button color="warn" (click)="openSnackBar(tempProduct)">Add To Cart</button>
+        </mat-card-actions>
+   
+    </mat-card-content>
+    <a  routerLinkActive="list-item-active" routerLink="/view" color="primary" class="stretched-link">
+
+    </a>
+</mat-card>

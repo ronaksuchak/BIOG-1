@@ -1,0 +1,197 @@
+<div class="filter">
+
+</div>
+<div ngSwitch="{{type}}">
+  <div *ngSwitchCase="'cpu'">
+
+    <table class="table table-dark table-striped">
+      <thead>
+        <th *ngFor="let pd of productHead"><span>{{pd}}</span></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of productObser |async ">
+          <!-- <td>{{pd.id}}</td> -->
+          <td>{{pd.name}}</td>
+          <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+          <td>{{pd.brand}}</td>
+          <!-- <td>{{pd.color}}</td> -->
+          <td>{{pd.coreClock}}</td>
+          <td>{{pd.coreCount}}</td>
+          <td>{{pd.graphicsType}}</td>
+          <td>{{pd.integratedGraphics}}</td>
+          <td>{{pd.manufacturer}}</td>
+          <td>{{pd.simMultiThread}}</td>
+          <td>{{pd.tdp}}</td>
+          <td>{{pd.price}}</td>
+          <!-- <td>{{pd.Available}}</td> -->
+          <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('cpu',pd) ">
+              Add</a></td>
+          <!-- <td><input type="button" >ADD</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+
+    <div>
+      <div *ngSwitchCase="'cooler'">
+        <table class="table table-dark table-striped">
+          <thead>
+            <th *ngFor="let pd of productHead">{{pd}}</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pd of productObser |async ">
+              <td>{{pd.id}}</td>
+              <td>{{pd.name}}</td>
+              <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+              <td>{{pd.fanRpm}}</td>
+              <td>{{pd.noiseLevel}}</td>
+              <td>{{pd.radiatorSize}}</td>
+              <td>{{pd.price}}</td>
+              <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('cooler',pd)">
+                  Add</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchCase="'ram'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"></td>
+            <td>{{pd.noOfSticks}}</td>
+            <td>{{pd.ramSize}}</td>
+            <td>{{pd.speed}}</td>
+            <td>{{pd.totalSize}}</td>
+            <td>{{pd.type}}</td>
+            <td>{{pd.price}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('ram',pd)">
+                Add</a></td>
+            <!-- <td><button>add</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'mother-board'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+            <td>{{pd.formFactor}}</td>
+            <td>{{pd.socket}}</td>
+            <td>{{pd.maxMemory}}</td>
+            <td>{{pd.memorySlots}}</td>
+            <td>{{pd.chipset}}</td>
+            <td>{{pd.price}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('mother-board',pd)">
+                Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'gpu'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+            <td>{{pd.chipset}}</td>
+            <td>{{pd.videoMemory}}</td>
+            <td>{{pd.coreClock}}</td>
+            <td>{{pd.boostClock}}</td>
+            <td>{{pd.length}}</td>
+            <td>{{pd.thickNess}}</td>
+            <td>{{pd.price}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('gpu',pd)">
+                Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'case'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+            <td>{{pd.brand}}</td>
+            <td>{{pd.color}}</td>
+            <td>{{pd.externalBay}}</td>
+            <td>{{pd.internalBay}}</td>
+            <td>{{pd.powerSupply}}</td>
+            <td>{{pd.sidePanelType}}</td>
+            <td>{{pd.type}}</td>
+            <td>{{pd.price}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('CASE',pd)">
+                Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'storage'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+            <td>{{pd.capacity}}</td>
+            <td>{{pd.type}}</td>
+            <td>{{pd.cache}}</td>
+            <td>{{pd.formFactor}}</td>
+            <td>{{pd.interFace}}</td>
+            <td>{{pd.pricePerGb}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('storage',pd)">
+                Add</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'psu'">
+      <table class="table table-dark table-striped">
+        <thead>
+          <th *ngFor="let pd of productHead">{{pd}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pd of productObser |async ">
+            <td>{{pd.id}}</td>
+            <td>{{pd.name}}</td>
+            <td class="coolerT"><img src="{{pd.imageUrl}}"> </td>
+
+            <td>{{pd.formFactor}}</td>
+            <td>{{pd.wattage}}</td>
+            <td>{{pd.efficiency}}</td>
+            <td>{{pd.modular}}</td>
+            <td>{{pd.price}}</td>
+            <td><a mat-button routerLinkActive="list-item-active" (click)="performSearch('psu',pd)">
+                Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchDefault>{{type}}</div>
+
+  </div>

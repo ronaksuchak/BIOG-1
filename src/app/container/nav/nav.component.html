@@ -1,0 +1,128 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>home</mat-icon> &nbsp; Home
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/addtocart">
+        <mat-icon  matBadge="15"  matBadgeColor="accent">shopping_cart</mat-icon>&nbsp;
+        Cart
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/product-list">
+        <mat-icon>shopping_basket</mat-icon>&nbsp;
+        Shopping
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/cutomize_intel">
+        <mat-icon>contact_page</mat-icon>&nbsp;
+        Customize Build
+      </a>
+    </mat-nav-list>
+
+    <!-- browse components -->
+    <mat-toolbar>Browse Components</mat-toolbar>
+    <mat-nav-list>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/cpu">
+        <img src="https://img.icons8.com/material/24/ffffff/smartphone-cpu--v1.png"/>
+        &nbsp;&nbsp;CPU
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/case">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172"
+          style=" fill:#000000;">
+          <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+            font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#ffffff">
+              <path
+                d="M50.16667,7.16667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v129c0,7.91917 6.41417,14.33333 14.33333,14.33333h71.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-129c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM50.16667,21.5h71.66667v71.66667h-71.66667zM64.5,35.83333v14.33333h43v-14.33333zM64.5,64.5v14.33333h43v-14.33333zM86,118.25c5.934,0 10.75,4.816 10.75,10.75c0,5.934 -4.816,10.75 -10.75,10.75c-5.934,0 -10.75,-4.816 -10.75,-10.75c0,-5.934 4.816,-10.75 10.75,-10.75z">
+              </path>
+            </g>
+          </g>
+        </svg>
+        
+        &nbsp;&nbsp;Case
+      </a>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/gpu">
+        <img src="https://img.icons8.com/material/24/ffffff/buy-with-card.png"/>
+        &nbsp;&nbsp;
+        Graphic Card
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/ram">
+       <img src="https://img.icons8.com/material/24/ffffff/memory-slot.png"/>
+        &nbsp;&nbsp;
+        RAM
+      </a>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/storage">
+       <img src="https://img.icons8.com/material/24/ffffff/cloud-sync.png"/>
+        &nbsp; &nbsp;
+        Storage
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/mother-board">
+        <img src="https://img.icons8.com/fluent-systems-filled/25/ffffff/motherboard.png"/>
+         &nbsp; &nbsp;
+         Mother-Board
+       </a>
+       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/cooler">
+        <img src="https://img.icons8.com/windows/32/ffffff/technical-air.png"/>
+         &nbsp; &nbsp;
+         CPU Cooler
+       </a>
+       <a mat-list-item routerLinkActive="list-item-active" routerLink="/browse-components/psu">
+        <mat-icon>power</mat-icon>
+         &nbsp; &nbsp;
+         Power Supply
+       </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Build In One Go</span>
+
+
+      <!-- <mat-search-bar class="search"></mat-search-bar> -->
+      <ul class="menu">
+        <li>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup">
+              Sign Up
+            </a></button>
+            <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signin">
+              Sign In
+            </a></button>
+            
+          </mat-menu>
+          <!-- manumodule used -->
+        </li>
+      </ul>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
+    <mat-toolbar id="footer">
+      <div class="container">
+ 
+        <p>
+          <a mat-button routerLinkActive="list-item-active" routerLink="/contact" id="button">Contact With Us</a>
+          <a mat-button routerLinkActive="list-item-active" routerLink="/about" id="button">About Us</a>
+        
+        </p>
+      </div>
+      
+    
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
