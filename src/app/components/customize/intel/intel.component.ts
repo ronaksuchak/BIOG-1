@@ -22,10 +22,11 @@ export class IntelComponent {
   ) { }
 
   ngOnInit(): void {
-    this.dataService.getMap().forEach(p => console.log(p));
     this.selectedMap = this.dataService.getMap();
-    this.selectedMap.forEach(p => this.totalPrice += p.price);
-    console.log(this.totalPrice)
+    console.log(this.selectedMap.entries());
+    this.selectedMap.forEach(p => {
+      this.totalPrice += p.price;
+    });
   }
 
 
