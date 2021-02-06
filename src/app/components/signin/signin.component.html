@@ -1,37 +1,59 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+<div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}.
+</div>
+
+<ng-template #loggedOut>
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <mat-card class="shipping-card">
       <mat-card-header>
         <img src="https://img.icons8.com/material-sharp/48/ffffff/edit-user-male.png"/><br>  
       </mat-card-header>
-    <h3>  &nbsp;SignIn here </h3>
+        <h3>&nbsp;Register here </h3>
       <mat-card-content>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput #email maxlength="10" placeholder="Email" formControlName="email">
-              <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-              <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
-                Email is <strong>invalid</strong>
+              <mat-label for="username">Username</mat-label>
+                <input matInput   name="username" [(ngModel)]="form.username" #username="ngModel"
+                required >
+              <mat-error *ngIf="f.submitted && username.invalid">
+                  <mat-error *ngIf="username.errors.required">Username is required</mat-error>
               </mat-error>
             </mat-form-field>
           </div>
         </div>
+
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Password" formControlName="password">
-              <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
-                Password is <strong>required</strong>
+              <mat-label for="password">Password</mat-label>
+              <input matInput type="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+                required minlength="6">
+              <mat-error *ngIf="f.submitted && password.invalid">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
               </mat-error>
             </mat-form-field>
           </div>
         </div>
+
       </mat-card-content>
+
       <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+            <button mat-raised-button color="warn" type="submit">Login</button>
+            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+              Login failed: {{errorMessage}}
+            </div>
       </mat-card-actions>
+
     </mat-card>
   </form>
-  
+  <mat-card class="sign-card">
+      <mat-card-actions>
+        <mat-label>Don't have an account?</mat-label>
+        <button mat-raised-button color="warn"><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup" color="warn">
+          Sign Up
+        </a></button>
+      </mat-card-actions>
+  </mat-card>
+</ng-template>

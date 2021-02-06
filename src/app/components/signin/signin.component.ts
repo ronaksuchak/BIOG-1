@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthLoginInfo } from 'src/app/services/auth/login-info';
+import { TokenStorageService } from 'src/app/services/auth/token-storage.service';
 
 @Component({
   selector: 'app-signin',
@@ -8,24 +10,50 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SigninComponent {
 
-  addressForm = this.fb.group({
-    username: [null, Validators.required],
-    // email: [null, Validators.required],
-    email: [null,[
-      Validators.required, Validators.minLength(10),Validators.email]],
-    password: [null, Validators.compose([
-      Validators.required, Validators.minLength(8), Validators.maxLength(10)])
-    ],
-    password2: [null, Validators.required],
-  });
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  private loginInfo: AuthLoginInfo;
 
-  hasUnitNumber = false;
-  checked = false;
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
-  constructor(private fb: FormBuilder) {}
+  ngOnInit() {
+    if(this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getAuthorities();
+    }
+  }
 
   onSubmit() {
-    alert('thanks');
+    console.log(this.form);
+
+    this.loginInfo = new AuthLoginInfo(
+      this.form.username,
+      this.form.password);
+
+    this.authService.attemptAuth(this.loginInfo).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUsername(data.username);
+        this.tokenStorage.saveAuthorities(data.authorities);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getAuthorities();
+        // this.reloadPage();
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
+
+  // reloadPage() {
+  //   window.location.reload();
+  // }
 
 }

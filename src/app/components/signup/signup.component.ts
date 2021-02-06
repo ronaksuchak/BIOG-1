@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { SignUpInfo } from 'src/app/services/auth/signup-info';
 
 @Component({
   selector: 'app-signup',
@@ -9,27 +12,38 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class SignupComponent implements OnInit{
 
-  ngOnInit(){
-    
-  }
+  form: any = {};
+  signupInfo: SignUpInfo;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  addressForm = this.fb.group({
-    username: [null, Validators.required],
-    // email: [null, Validators.required],
-    email: [null,[
-      Validators.required, Validators.minLength(10),Validators.email]],
-    password: [null, Validators.compose([
-      Validators.required, Validators.minLength(8), Validators.maxLength(10)])
-    ],
-    password2: [null, Validators.required],
-  });
+  constructor(private authService: AuthService,private router : Router) { }
 
-  hasUnitNumber = false;
-  checked = false;
-
-  constructor(private fb: FormBuilder) {}
+  ngOnInit() { }
 
   onSubmit() {
-    alert('thanks');
+    console.log(this.form);
+
+    this.signupInfo = new SignUpInfo(
+      this.form.name,
+      this.form.username,
+      this.form.email,
+      this.form.password);
+
+    this.authService.signUp(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
+
+    this.router.navigateByUrl('/signin')
   }
 }

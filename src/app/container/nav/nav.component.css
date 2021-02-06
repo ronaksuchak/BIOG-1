@@ -2,21 +2,12 @@
   height: 100%;
   
 }
-#footer{
-  /* margin-top: 43%; */
-  margin-top: 4%;
-  position: relative;
-  background-color : #212121;
-  bottom: 0;
-  color: rgb(236, 219, 219);
-}
-
 #navbar{
   background-color: #212121;
   position: relative;
 }
 .sidenav {
-  width: 220px;
+  width: 240px;
 }
 
 .sidenav .mat-toolbar {
