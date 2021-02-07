@@ -38,4 +38,15 @@ export class IntelComponent {
   }
 
   // name = this.dataService.getComponent();
+  printComponent(cmpName) {
+    let printContents = document.getElementById(cmpName);
+
+    let originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents.innerHTML;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+}
 }

@@ -92,6 +92,11 @@ export class ProductListComponent implements OnInit {
 
   }
 
+  public showdetails(value){
+    console.log(value);
+    this.router.navigateByUrl('/view')
+  }
+
   getSelectedComponent(type: string): Observable<any[]> {
 
     switch (type) {

@@ -14,13 +14,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserBoard(): Observable<string> {
+    console.log("in u service");
     return this.http.get(this.userUrl, { responseType: 'text' });
   }
-
-  getPMBoard(): Observable<string> {
-    return this.http.get(this.pmUrl, { responseType: 'text' });
-  }
-
+ 
   getAdminBoard(): Observable<string> {
     return this.http.get(this.adminUrl, { responseType: 'text' });
   }

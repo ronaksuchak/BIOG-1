@@ -34,6 +34,8 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { UserComponent } from './components/user/user.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { MatRadioModule } from '@angular/material/radio';
     SigninComponent,
     ProductdetailsComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    UserComponent,
+    UserProfileComponent
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,LayoutModule, MatToolbarModule,

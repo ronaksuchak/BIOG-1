@@ -18,6 +18,10 @@ export class NavComponent {
       shareReplay()
     );
   itemCount = 0;
+
+  public roles: string[];
+  public authority: string;
+  
   constructor(
     private breakpointObserver: BreakpointObserver,
     private cartService: CartService,private token: TokenStorageService
@@ -27,20 +31,24 @@ export class NavComponent {
 
   }
 
-
-  info: any;
-
   ngOnInit() {
-    this.info = {
-      token: this.token.getToken(),
-      username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
-    };
+    if (this.token.getToken()) {
+      this.roles = this.token.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.authority = 'admin';
+          return false;
+        }
+        
+        this.authority = 'user';
+        return true;
+      });
+    }
   }
 
   logout() {
     this.token.signOut();
-    // window.location.reload();
+    window.location.reload();
   }
 
 

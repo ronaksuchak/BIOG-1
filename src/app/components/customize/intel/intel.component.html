@@ -1,142 +1,110 @@
-<table class="table table-dark table-striped">
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" id="compobutton" (click)="selected('cpu')">
-        Add CPU</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('cpu')?.brand }} {{selectedMap.get('cpu')?.name }}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('cpu')?.price |currency:'INR'}}</a></td>
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('cooler')">
-        Add CPU Cooler</a></td>
-    <td><a mat-button id="compobutton">{{selectedMap.get('cooler')?.brand }}
-        {{selectedMap.get('cooler')?.name}}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('cooler')?.price |currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('ram')">
-        Add Memory</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('ram')?.brand }} {{selectedMap.get('ram')?.name }}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('ram')?.price |currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('mother-board')">
-        Add MotherBoard</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('mother-board')?.brand }} {{selectedMap.get('mother-board')?.name}}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('mother-board')?.price |currency:'INR'}}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('gpu')">
-        Add Graphic Card</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('gpu')?.brand }} {{selectedMap.get('gpu')?.name }}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('gpu')?.price |currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('case')">
-        Add Case</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('CASE')?.brand }} {{selectedMap.get('CASE')?.name }}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('CASE')?.price |currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('storage')">
-        Add Storage</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('storage')?.brand }} {{selectedMap.get('storage')?.name }}
-      </a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('storage')?.price|currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
-        (click)="selected('psu')">
-        Add Power Supply</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('psu')?.brand }} {{selectedMap.get('psu')?.name }}</a></td>
-    <td><a mat-button id="compobutton">
-        {{selectedMap.get('psu')?.price | currency:'INR' }}</a></td>
-
-  </tr>
-  <tr>
-    <td>
-
-      <a mat-button id="compobutton">
-        Total price </a>
-    <td> <a mat-button id="compobutton">
-        {{totalPrice|currency:'INR' || 0 }}</a> </td>
-
-  </tr>
-</table>
-
-
-
-
-
-
-
-
-
-
+<div id="compotable">
+  <table class="table table-dark table-striped" >
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" id="compobutton" (click)="selected('cpu')">
+          Add CPU</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('cpu')?.brand }} {{selectedMap.get('cpu')?.name }}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('cpu')?.price |currency:'INR'}}</a></td>
+    </tr>
+    
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('cooler')">
+          Add CPU Cooler</a></td>
+      <td><a mat-button id="compobutton">{{selectedMap.get('cooler')?.brand }}
+          {{selectedMap.get('cooler')?.name}}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('cooler')?.price |currency:'INR' }}</a></td>
+  
+    </tr>
+    
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('ram')">
+          Add Memory</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('ram')?.brand }} {{selectedMap.get('ram')?.name }}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('ram')?.price |currency:'INR' }}</a></td>
+  
+    </tr>
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('mother-board')">
+          Add MotherBoard</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('mother-board')?.brand }} {{selectedMap.get('mother-board')?.name}}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('mother-board')?.price |currency:'INR'}}</a></td>
+  
+    </tr>
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('gpu')">
+          Add Graphic Card</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('gpu')?.brand }} {{selectedMap.get('gpu')?.name }}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('gpu')?.price |currency:'INR' }}</a></td>
+  
+    </tr>
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('case')">
+          Add Case</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('CASE')?.brand }} {{selectedMap.get('CASE')?.name }}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('CASE')?.price |currency:'INR' }}</a></td>
+  
+    </tr>
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('storage')">
+          Add Storage</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('storage')?.brand }} {{selectedMap.get('storage')?.name }}
+        </a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('storage')?.price|currency:'INR' }}</a></td>
+  
+    </tr>
+    <tr>
+      <td><a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton"
+          (click)="selected('psu')">
+          Add Power Supply</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('psu')?.brand }} {{selectedMap.get('psu')?.name }}</a></td>
+      <td><a mat-button id="compobutton">
+          {{selectedMap.get('psu')?.price | currency:'INR' }}</a></td>
+  
+    </tr>
+    <tr>
+      <td>
+  
+        <a mat-button id="compobutton">
+          Total price </a>
+          <td>
+  
+          </td>
+      <td> <a mat-button id="compobutton">
+          {{totalPrice|currency:'INR' || 0 }}</a> </td>
+  
+    </tr>
+    
+  </table>
+</div>
 
 
 
-
-
-
+<a mat-button id="compobutton" (click)="printComponent('compotable')" >
+  download PDF
+</a>
 
 
 
 
 
 
-
-
-<!-- <div class="grid-container">
-    <h1 class="mat-h1">Intel Components List : </h1>
-    <mat-grid-list cols="3" rowHeight="100px">
-      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card class="dashboard-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton">
-              Add CPU</a>
-              <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton">
-               Selected Component</a>
-               <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton">
-                Prise</a>
-                <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_amd" id="compobutton">
-                  Buy Now</a>
-
-          </mat-card-header>
-          <mat-card-content>
-
-          </mat-card-content>
-          <mat-card-actions>
-
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-   -->

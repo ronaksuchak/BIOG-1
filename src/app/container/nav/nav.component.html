@@ -7,7 +7,7 @@
         <mat-icon>home</mat-icon> &nbsp; Home
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/addtocart">
-        <mat-icon matBadge={{itemCount}} matBadgeColor="accent">shopping_cart</mat-icon>&nbsp;
+        <mat-icon>shopping_cart</mat-icon>&nbsp;
         Cart
       </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/product-list">
@@ -91,7 +91,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Build In One Go</span>
+      <h1>Build In One Go</h1>
 
 
       <!-- <mat-search-bar class="search"></mat-search-bar> -->
@@ -101,17 +101,33 @@
             <img src="https://img.icons8.com/metro/26/ffffff/change-user-male.png"/>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup">
-                Sign Up
-              </a></button>
-            <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signin">
-                Sign In
-              </a></button>
-              <button mat-menu-item (click)="logout()">
-                <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
-                  log out
-                </a>
-              </button>
+            <ul >
+              <li *ngIf="authority === 'user'" class="nav-item">
+                <app-user-profile></app-user-profile>
+                <button mat-menu-item >
+                  <a mat-list-item routerLinkActive="list-item-active" routerLink="user">User Board</a>
+                </button>
+                <button mat-menu-item (click)="logout()">
+                  <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+                    Sign Out
+                  </a>
+                </button>
+              </li>
+              <li *ngIf="authority === 'admin'" class="nav-item">
+                <a class="nav-link" routerLink="admin">Admin Board</a>
+              </li>
+              <li  *ngIf="!authority">
+                <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup">
+                  Sign Up
+                </a></button>
+                <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signin">
+                  Sign In
+                </a></button>
+              </li>
+            </ul>
+            
+           
+             
           </mat-menu>
           <!-- manumodule used -->
         </li>
