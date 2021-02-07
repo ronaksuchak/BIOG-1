@@ -104,9 +104,6 @@
             <ul >
               <li *ngIf="authority === 'user'" class="links">
                 <app-user-profile></app-user-profile>
-                <!-- <button mat-menu-item >
-                  <a mat-list-item routerLinkActive="list-item-active" routerLink="user">User Board</a>
-                </button> -->
                 <button mat-menu-item (click)="logout()">
                   <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
                     Sign Out

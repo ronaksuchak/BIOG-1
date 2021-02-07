@@ -35,6 +35,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AuthGuard } from './services/authguard/auth.guard';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatMenuModule,NgMatSearchBarModule, HttpClientModule, NgxSpinnerModule, MatTableModule,FormsModule,
     ReactiveFormsModule,MatBadgeModule, MatInputModule,MatSnackBarModule, MatSelectModule, MatRadioModule
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

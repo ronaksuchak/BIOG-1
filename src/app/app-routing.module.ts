@@ -11,6 +11,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { UserComponent } from './components/user/user.component';
+import { AuthGuard } from './services/authguard/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,10 +20,13 @@ const routes: Routes = [
   { path: 'addcomponent', component: PcComponentsComponent },
   { path: 'contactus', component: HomeComponent },
   { path: 'browse-components/:comp', component: ProductListComponent },
-  { path: 'addtocart', component: CartComponent },
+  { path: 'addtocart', component: CartComponent ,
+    canActivate:[AuthGuard]},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'shipping', component: AddressComponent },
+  { path: 'shipping', component: AddressComponent
+  ,
+  canActivate:[AuthGuard] },
   { path: 'contact', component: ContactusComponent },
   { path: 'about', component: AboutusComponent },
   { path: 'user', component: UserComponent }

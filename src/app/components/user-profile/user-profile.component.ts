@@ -16,8 +16,11 @@ export class UserProfileComponent implements OnInit {
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
     };
+  }
+
+  public changeUserName(info:any){
+    this.info = info;
   }
 
   logout() {
