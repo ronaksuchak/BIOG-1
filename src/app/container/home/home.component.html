@@ -6,13 +6,19 @@
     <img mat-card-image src='assets\images\student.jpg' alt="Photo of a Shiba Inu">
     <mat-card-actions>
       &nbsp;&nbsp;
-      <button mat-raised-button color="warn" id="button">
+      <!-- <button mat-raised-button color="warn" id="button">
         <a  routerLinkActive="list-item-active"  (click)="selected('video')" >View</a>
       </button>
       <br>
       <button mat-raised-button color="warn" id="button">
         <a routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">Build Your Own</a>
-    </button>
+    </button> -->
+
+    <a mat-button routerLinkActive="list-item-active" (click)="selected('gaming')"
+        id="button">View</a><br>
+        <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">
+          Build Your Own
+        </a>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>
@@ -23,13 +29,19 @@
     <img mat-card-image src='assets\images\video2.jpg' alt="Photo ofsrc a Shiba Inu">
     <mat-card-actions>
       &nbsp;&nbsp;
-      <button mat-raised-button color="warn" id="button">
+      <!-- <button mat-raised-button color="warn" id="button">
         <a  routerLinkActive="list-item-active"  (click)="selected('video')" >View</a>
       </button>
       <br>
       <button mat-raised-button color="warn" id="button">
         <a routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">Build Your Own</a>
-    </button>
+    </button> -->
+
+    <a mat-button routerLinkActive="list-item-active" (click)="selected('gaming')"
+        id="button">View</a><br>
+        <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">
+          Build Your Own
+        </a>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>
@@ -39,9 +51,13 @@
     <h2><b>For Gaming</b></h2><br>
     <img mat-card-image src='assets\images\game.jpg' alt="Photo of a Shiba Inu">
     <mat-card-actions>
-      &nbsp;&nbsp;<a mat-button routerLinkActive="list-item-active" (click)="selected('gaming')"
+      &nbsp;&nbsp;
+      <a mat-button routerLinkActive="list-item-active" (click)="selected('gaming')"
         id="button">View</a><br>
-        <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">Build Your Own</a>
+        <a mat-button routerLinkActive="list-item-active" routerLink="/cutomize_intel" id="button">
+          Build Your Own
+        </a>
+
     </mat-card-actions>
   </mat-card-content>
 </mat-card>

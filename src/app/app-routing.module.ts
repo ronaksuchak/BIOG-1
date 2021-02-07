@@ -8,7 +8,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AddressComponent } from './components/address/address.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { UserComponent } from './components/user/user.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'shipping', component: AddressComponent },
-  { path: 'view', component: ProductdetailsComponent },
   { path: 'contact', component: ContactusComponent },
   { path: 'about', component: AboutusComponent },
   { path: 'user', component: UserComponent }

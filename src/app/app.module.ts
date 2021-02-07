@@ -29,7 +29,6 @@ import { MatInputModule } from '@angular/material/input';
 import { AddressComponent } from './components/address/address.component';
 import { SigninComponent } from './components/signin/signin.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -49,7 +48,6 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     AddressComponent,
     SigninComponent,
-    ProductdetailsComponent,
     AboutusComponent,
     ContactusComponent,
     UserComponent,
