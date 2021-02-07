@@ -48,17 +48,30 @@ export class ProductListComponent implements OnInit {
   ) {
     this.route.paramMap.subscribe(params => {
       this.name = params.get("comp");
-      this.products = this.getSelectedComponent(this.name)
-
+      // this.products = this.getSelectedComponent(this.name)
+      if (!!this.name) {
+        console.log(this.name)
+        this.products = this.getSelectedComponent(this.name)
+      }
     })
     this.route.queryParamMap.subscribe(params => {
       this.usecase = params.get('use');
       // console.log(usecase);
-      if (!!this.usecase)
+      if (!!this.usecase) {
+        console.log(this.usecase)
         this.products = usecaseService.getSystemByUse(this.usecase);
-      else
-        this.products = usecaseService.getAllPc();
+      }
+      else {
+        if (!!this.name) {
+          this.products = this.getSelectedComponent(this.name)
+        } else {
+          this.products = usecaseService.getAllPc();
+        }
+      }
     })
+
+
+
   }
 
 
@@ -92,7 +105,7 @@ export class ProductListComponent implements OnInit {
 
   }
 
-  public showdetails(value){
+  public showdetails(value) {
     console.log(value);
     this.router.navigateByUrl('/view')
   }
