@@ -93,15 +93,21 @@
           {{totalPrice|currency:'INR' || 0 }}</a> </td>
   
     </tr>
-    
+    <tr></tr>
+    <tr>
+        <td></td>
+        <td>
+            <a mat-button id="compobutton" (click)="printComponent('compotable')" >
+                download PDF
+              </a>
+              
+        </td>
+    </tr>
   </table>
 </div>
 
 
 
-<a mat-button id="compobutton" (click)="printComponent('compotable')" >
-  download PDF
-</a>
 
 
 

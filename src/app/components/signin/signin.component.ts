@@ -46,7 +46,7 @@ export class SigninComponent {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
          this.reloadPage();
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/shipping')
       },
       error => {
         console.log(error);

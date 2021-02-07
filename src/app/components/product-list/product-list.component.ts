@@ -101,7 +101,7 @@ export class ProductListComponent implements OnInit {
     let cartItem = new CartItem(value);
     this.cartService.setCartItem(cartItem);
     console.log("add to cart called!!")
-    this.router.navigateByUrl('/addtocart')
+    this.router.navigateByUrl('/signin')
 
   }
 
