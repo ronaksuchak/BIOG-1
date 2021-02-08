@@ -18,7 +18,6 @@ const routes: Routes = [
   { path: 'product-list', component: ProductListComponent },
   { path: 'cutomize_intel', component: IntelComponent },
   { path: 'addcomponent', component: PcComponentsComponent },
-  { path: 'contactus', component: HomeComponent },
   { path: 'browse-components/:comp', component: ProductListComponent },
   { path: 'addtocart', component: CartComponent },
   { path: 'signup', component: SignupComponent },

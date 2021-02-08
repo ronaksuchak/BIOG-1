@@ -19,19 +19,16 @@ import { UsecaseService } from './../../services/usecase.service';
 
 @Component({
   selector: 'app-product-list',
-  /*   templateUrl: './product-list-grid.component.html', */
-  // templateUrl: './product-list-table.component.html',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  //array of product class
   products: Observable<any[]>;
   name: string;
   usecase: string;
   apiHelper: ApiHelper;
-  //service injection
-  constructor(private usecaseService: UsecaseService,
+  constructor(
+    private usecaseService: UsecaseService,
     private dataService: DataService,
     private cpuCooler: CpucoolerService,
     private graphicsCard: GraphicCardService,
