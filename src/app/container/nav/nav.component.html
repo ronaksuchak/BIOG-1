@@ -102,21 +102,16 @@
           </button>
           <mat-menu #menu="matMenu">
             <ul >
-              <li *ngIf="authority === 'user'" class="nav-item">
+              <li *ngIf="authority === 'user'" class="links">
                 <app-user-profile></app-user-profile>
-                <button mat-menu-item >
-                  <a mat-list-item routerLinkActive="list-item-active" routerLink="user">User Board</a>
-                </button>
                 <button mat-menu-item (click)="logout()">
                   <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
                     Sign Out
                   </a>
                 </button>
               </li>
-              <li *ngIf="authority === 'admin'" class="nav-item">
-                <a class="nav-link" routerLink="admin">Admin Board</a>
-              </li>
-              <li  *ngIf="!authority">
+              
+              <li  *ngIf="!authority"  class="links">
                 <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active" routerLink="/signup">
                   Sign Up
                 </a></button>

@@ -98,13 +98,13 @@ export class ProductListComponent implements OnInit {
     let cartItem = new CartItem(value);
     this.cartService.setCartItem(cartItem);
     console.log("add to cart called!!")
-    this.router.navigateByUrl('/addtocart')
+    this.router.navigateByUrl('/signin')
 
   }
 
   public showdetails(value) {
     console.log(value);
-    this.router.navigateByUrl('/view')
+   // this.router.navigateByUrl('/view')
   }
 
   getSelectedComponent(type: string): Observable<any[]> {

@@ -29,13 +29,14 @@ import { MatInputModule } from '@angular/material/input';
 import { AddressComponent } from './components/address/address.component';
 import { SigninComponent } from './components/signin/signin.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AuthGuard } from './services/authguard/auth.guard';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,6 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SignupComponent,
     AddressComponent,
     SigninComponent,
-    ProductdetailsComponent,
     AboutusComponent,
     ContactusComponent,
     UserComponent,
@@ -61,7 +61,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatMenuModule,NgMatSearchBarModule, HttpClientModule, NgxSpinnerModule, MatTableModule,FormsModule,
     ReactiveFormsModule,MatBadgeModule, MatInputModule,MatSnackBarModule, MatSelectModule, MatRadioModule
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

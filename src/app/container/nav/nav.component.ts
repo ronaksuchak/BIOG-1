@@ -39,7 +39,6 @@ export class NavComponent {
           this.authority = 'admin';
           return false;
         }
-        
         this.authority = 'user';
         return true;
       });

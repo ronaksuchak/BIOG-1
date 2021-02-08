@@ -18,10 +18,7 @@ export class HomeComponent {
     this.router.navigate(['/product-list'], { queryParams: { use: value } })
   }
 
-  ngAfterViewChecked():void{
-    console.log("in home to check");
-    
-  }
+  
 
 
 

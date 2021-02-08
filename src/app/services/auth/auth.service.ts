@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
 import { SignUpInfo } from './signup-info';
+import { TokenStorageService } from './token-storage.service';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,7 +20,8 @@ export class AuthService {
   private loginUrl = 'http://localhost:9595/api/auth/signin';
   private signupUrl = 'http://localhost:9595/api/auth/signup';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private tokenStorage: TokenStorageService,
+   ) {
   }
 
   attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
@@ -28,4 +31,5 @@ export class AuthService {
   signUp(info: SignUpInfo): Observable<string> {
     return this.http.post<string>(this.signupUrl, info, httpOptions);
   }
+
 }

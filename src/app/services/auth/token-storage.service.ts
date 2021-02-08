@@ -14,7 +14,7 @@ export class TokenStorageService {
   signOut() {
     window.sessionStorage.clear();
   }
-
+ 
   public saveToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
@@ -24,6 +24,15 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
+  isLoggedIn(): boolean{
+    let token = this.getToken();
+    console.log(token);
+    if(token == undefined || token == null || token == "") {
+      return false;
+
+    }
+    return true;
+  }
   public saveUsername(username: string) {
     window.sessionStorage.removeItem(USERNAME_KEY);
     window.sessionStorage.setItem(USERNAME_KEY, username);

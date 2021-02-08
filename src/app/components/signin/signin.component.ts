@@ -45,8 +45,10 @@ export class SigninComponent {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
+      
          this.reloadPage();
-        this.router.navigateByUrl('/')
+     //  this.router.navigate(['/']);
+         
       },
       error => {
         console.log(error);
@@ -54,10 +56,13 @@ export class SigninComponent {
         this.isLoginFailed = true;
       }
     );
+   // window.location.href ="/addtocart";
   }
 
   reloadPage() {
-    window.location.reload();
+    //window.location.reload();
+    window.setTimeout(function(){location.reload()},3000)
+    this.router.navigate(['/addtocart']);
   }
 
 }

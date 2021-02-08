@@ -44,6 +44,7 @@ export class SignupComponent implements OnInit{
       }
     );
 
-    this.router.navigateByUrl('/signin')
+     this.router.navigateByUrl('/signin')
+    // window.location.href ="/addtocart";
   }
 }
